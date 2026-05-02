@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-migrations-guardrail"
+version = "0.1.0"
+description = "Django management commands for checking, applying, and verifying migrations."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "django>=4.1",
+]
+classifiers = [
+    "Framework :: Django",
+    "Framework :: Django :: 4.1",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.1",
+    "Framework :: Django :: 5.2",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+
+[tool.setuptools.packages.find]
+include = ["migration_guardrail*"]

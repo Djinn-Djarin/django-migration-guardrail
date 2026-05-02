@@ -1,0 +1,46 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+*$py.class
+
+# Build/package artifacts
+build/
+dist/
+wheels/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test/coverage artifacts
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+
+# Django/local runtime files
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+migration_guardrail_report.html
+
+# Local environment/config
+.env
+.env.*
+!.env.example
+.codex
+main.py
+
+# Editor/OS files
+.vscode/
+.idea/
+.DS_Store
