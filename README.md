@@ -48,67 +48,44 @@ into confusing production errors.
 - Reports fields missing from the database
 - Reports database columns that no longer exist in models
 - Writes an HTML report with `--html-report`
-- Installs directly from GitLab without publishing to PyPI
+- Can be installed from PyPI or directly from GitLab
 
 ## Installation
 
-If your Django project uses `uv`, add the `dev` branch as a dependency:
+Install from PyPI with `pip`:
 
 ```bash
-uv add "django-migrations-guardrail @ git+ssh://git@gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail.git@dev"
+python -m pip install django-migrations-guardrail
 ```
 
-This updates your project's `pyproject.toml` and lock file.
-
-If you want to install into a virtualenv without updating project dependencies,
-use `uv pip`:
+If your project uses `uv`, add it as a dependency:
 
 ```bash
-uv pip install --python .venv/bin/python "git+ssh://git@gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail.git@dev"
+uv add django-migrations-guardrail
 ```
 
-If you do not use `uv`, install with `pip` from an activated virtualenv:
-
-```bash
-python -m pip install "git+ssh://git@gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail.git@dev"
-```
-
-If your virtualenv does not have `pip`, install pip first:
-
-```bash
-python -m ensurepip --upgrade
-python -m pip install --upgrade pip
-python -m pip install "git+ssh://git@gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail.git@dev"
-```
-
-Install a specific tag instead of `dev` for stable releases with `uv add`:
-
-```bash
-uv add "django-migrations-guardrail @ git+ssh://git@gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail.git@v0.1.0"
-```
-
-Or install a tag into a virtualenv with `uv pip`:
-
-```bash
-uv pip install --python .venv/bin/python "git+ssh://git@gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail.git@v0.1.0"
-```
-
-Or with `pip`:
+Install from a Git checkout when testing an unreleased branch or tag:
 
 ```bash
 python -m pip install "git+ssh://git@gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail.git@v0.1.0"
 ```
 
+Or with `uv`:
+
+```bash
+uv add "django-migrations-guardrail @ git+ssh://git@gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail.git@v0.1.0"
+```
+
 Install from a local checkout while developing:
 
 ```bash
-uv add --editable /path/to/django-migration-guardrail
+uv add --editable /path/to/django-migrations-guardrail
 ```
 
-Or install the local checkout into a specific virtualenv:
+Or with `pip`:
 
 ```bash
-uv pip install --python /path/to/project/.venv/bin/python -e /path/to/django-migration-guardrail
+python -m pip install -e /path/to/django-migrations-guardrail
 ```
 
 ## Django Setup
