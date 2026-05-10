@@ -4,11 +4,20 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-migrations-guardrail"
-version = "0.1.0"
-description = "Django management commands for checking, applying, and verifying migrations."
+version = "0.1.1"
+description = "Django migration checker and schema drift guardrail for safer database deploys."
 readme = "README.md"
 requires-python = ">=3.10"
-keywords = ["django", "migrations", "database", "schema", "deployment"]
+license = "MIT"
+keywords = [
+    "django",
+    "django migrations",
+    "migration checker",
+    "schema drift",
+    "database schema",
+    "deployment safety",
+    "management command",
+]
 dependencies = [
     "django>=4.1",
 ]
@@ -25,12 +34,17 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Topic :: Database",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Quality Assurance",
 ]
 
+license-files = ["LICENSE"]
+
 [project.urls]
-Homepage = "https://gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail"
-Repository = "https://gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail"
-Issues = "https://gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail/-/issues"
+Homepage = "https://github.com/Djinn-Djarin/django-migration-guardrail"
+Repository = "https://github.com/Djinn-Djarin/django-migration-guardrail"
+Issues = "https://github.com/Djinn-Djarin/django-migration-guardrail/issues"
 
 [tool.setuptools.packages.find]
 include = ["migration_guardrail*"]

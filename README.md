@@ -1,6 +1,12 @@
 # Django Migrations Guardrail
 
-Django app that adds migration and database sync guardrails to a project.
+Django Migrations Guardrail is a Django migration checker for catching schema
+drift, migration history problems, and model-to-database mismatches before they
+turn into broken deploys.
+
+If you are looking for a Django package to verify migrations, check database
+sync, or add safer migration deploy checks, this package is built for that
+workflow.
 
 It extends Django's normal `migrate` command with a `--sync` option:
 
@@ -14,6 +20,16 @@ then verifies the final database state.
 - Django system checks
 - migration files vs `django_migrations`
 - model fields vs database columns
+
+## Why Use It
+
+`django-migrations-guardrail` helps when your Django app has:
+
+- migrations applied in code but not recorded in the database
+- migrations recorded in the database but missing on disk
+- schema drift caused by manual database edits
+- broken deploys after edited, deleted, or faked migrations
+- field definitions that no longer match real database columns
 
 ## Background
 
@@ -33,6 +49,7 @@ into confusing production errors.
 ## Features
 
 - Adds `python manage.py migrate --sync`
+- Works as a Django migration checker before and after deploys
 - Runs pre-migration checks before applying migrations
 - Applies pending migrations only if preflight checks pass
 - Runs full database sync checks after migrations succeed
@@ -47,6 +64,7 @@ into confusing production errors.
 - Reports missing database tables
 - Reports fields missing from the database
 - Reports database columns that no longer exist in models
+- Helps detect Django schema drift during deployment
 - Writes an HTML report with `--html-report`
 - Can be installed from PyPI or directly from GitLab
 
@@ -67,13 +85,13 @@ uv add django-migrations-guardrail
 Install from a Git checkout when testing an unreleased branch or tag:
 
 ```bash
-python -m pip install "git+ssh://git@gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail.git@v0.1.0"
+python -m pip install "git+ssh://git@gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail.git@v0.1.1"
 ```
 
 Or with `uv`:
 
 ```bash
-uv add "django-migrations-guardrail @ git+ssh://git@gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail.git@v0.1.0"
+uv add "django-migrations-guardrail @ git+ssh://git@gitlab.decipherzone.com/divendra.pathak/django-migrations-gaurdrail.git@v0.1.1"
 ```
 
 Install from a local checkout while developing:
